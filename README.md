@@ -1,4 +1,4 @@
-# bedrock-capistrano
+# bedrock-capistrano for Deployment on DigitalOcean w/ ServerPilot
 
 These are the Capistrano configs for deploying [Bedrock](https://github.com/roots/bedrock) projects.
 
