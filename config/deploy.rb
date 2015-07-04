@@ -7,12 +7,18 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Hardcodes branch to always be master
 # This could be overridden in a stage config file
-set :branch, :master
+# set :branch, :master
 
-set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
+#  Deploy to set on stage config file
+# set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
+
+# Paths in server to composer and wp-cli
+SSHKit.config.command_map[:composer] = "/usr/bin/composer5.6-sp"
+SSHKit.config.command_map[:wp] = "/usr/bin/wp"
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
+set :keep_releases, 3
 
 # Apache users with .htaccess files:
 # it needs to be added to linked_files so it persists across deploys:
